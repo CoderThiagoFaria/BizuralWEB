@@ -1,0 +1,177 @@
+html {
+    background-color: gray;
+}
+
+.Container {
+    font-family: sans-serif;
+}
+
+.titulo-principal {
+    text-align: center;
+}
+
+/* MENU PRINCIPAL */
+.lista {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    padding: 10px;
+}
+
+/* Adjust the margin-right for the "CONTATO" button */
+/* MENU PRINCIPAL */
+/* MENU PRINCIPAL */
+.lista {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    padding: 10px;
+}
+
+.time {
+    margin: 0;
+    padding-top: 10px;
+    text-align: center;
+    width: 110px;
+    height: 30px;
+    background-color: transparent; /* Cor de fundo inicial */
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    position: relative; /* Adicionando posição relativa */
+    overflow: hidden; /* Garantindo que o pseudo-elemento não ultrapasse */
+    z-index: 1; /* Definindo a ordem de empilhamento */
+
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transições suaves */
+}
+
+.time:hover {
+    background-color: #120b9b; /* Cor de fundo ao passar o mouse */
+    box-shadow: 0 0 10px #ff66b2; /* Sombreamento ao passar o mouse */
+}
+
+/* Pseudo-elemento para a animação */
+.time::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    transform: scaleX(0); /* Inicialmente, o quadrado está invisível */
+    transform-origin: right; /* Origem da transformação à direita */
+    transition: transform 0.3s ease-in-out; /* Transição suave */
+    z-index: -1; /* Colocando o pseudo-elemento atrás do elemento principal */
+}
+
+.time:hover::before {
+    transform: scaleX(1); /* Expandindo o quadrado ao passar o mouse */
+}
+
+
+
+/* CORPO DA PAGINA */
+.quadrado {
+    border: 0;
+    width: 100%;
+    height: 8%;
+    position: absolute;
+    background-color: black;
+    z-index: 0;
+}
+
+/* Adicione esta regra CSS para centralizar a div de busca */
+.busca {
+    text-align: center;
+    margin-top: 20px; /* Ajuste a margem conforme necessário para dar espaço entre o corpo da página e a barra de busca */
+}
+
+/* Estilo para o campo de entrada de busca */
+.busca input {
+    padding: 8px;
+}
+
+/* Estilo para o botão de busca */
+.busca button {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Estilos para os parágrafos de introdução */
+.introducao-pg {
+    margin: 30px;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilo específico para o primeiro parágrafo */
+.introducao-pg:first-child {
+    font-weight: bold;
+}
+
+/* Estilo específico para o segundo parágrafo */
+.introducao-pg:nth-child(2) {
+    font-style: italic;
+}
+
+/* Estilo específico para o terceiro parágrafo */
+.introducao-pg:nth-child(3) {
+    color: #007BFF; /* Cor azul */
+}
+
+/* Estilos para a div quadrado2 */
+.quadrado2 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin: 0; /* Remova a margem */
+    z-index: 1; /* Ajuste o valor do z-index conforme necessário para sobrepor o rodapé */
+}
+
+/* Estilos para a div rodape */
+/* Estilos para a div rodape */
+.rodape {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent; /* Defina a cor de fundo desejada ou deixe transparente */
+    text-align: center;
+    padding: 10px;
+    margin: 0; /* Remova a margem */
+    z-index: 2; /* Valor maior para garantir que fique acima da div quadrado2 */
+}
+
+/* Estilos futurísticos para o texto "Des de 2023" */
+.rodape::before {
+    content: "Des de ";
+    color: #00ff00; /* Cor verde (ajuste conforme desejado) */
+    font-family: 'Roboto', sans-serif; /* Use uma fonte futurística ou uma fonte personalizada */
+    font-size: 18px; /* Tamanho da fonte */
+    font-weight: bold;
+    transform: skewX(-20deg); /* Inclinação para um efeito futurístico */
+}
+
+/* Estilos para o ano "2023" */
+.rodape::after {
+    content: "2023";
+    color: #ff0000; /* Cor vermelha (ajuste conforme desejado) */
+    font-family: 'Orbitron', sans-serif; /* Use uma fonte futurística ou uma fonte personalizada */
+    font-size: 24px; /* Tamanho da fonte */
+    font-weight: bold;
+    transform: skewX(-20deg); /* Inclinação para um efeito futurístico */
+}
+
